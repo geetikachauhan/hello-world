@@ -16,7 +16,7 @@ import { CoursesService } from './courses.service';
         <td [attr.colspan]="colSpan">ColSpan</td>
       </tr>
     </table>
-    <button class="btn btn-primary">Save</button>
+    <button class="btn btn-primary" [class.toggle-class]="isActive">Save</button>
   `,
 })
 export class CoursesComponent {
@@ -24,6 +24,7 @@ export class CoursesComponent {
   courses;
   imageUrl;
   colSpan = 2;
+  isActive = true;
 
   constructor(service: CoursesService) {
     this.title = service.getTitle();

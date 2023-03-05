@@ -11,12 +11,18 @@ import { CoursesService } from './courses.service';
       </li>
     </ul>
     <img [src]="imageUrl" /><!--property binding-->
+    <table>
+      <tr>
+        <td [attr.colspan]="colSpan">ColSpan</td>
+      </tr>
+    </table>
   `,
 })
 export class CoursesComponent {
   title;
   courses;
   imageUrl;
+  colSpan = 2;
 
   constructor(service: CoursesService) {
     this.title = service.getTitle();

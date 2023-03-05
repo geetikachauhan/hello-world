@@ -25,7 +25,7 @@ import { CoursesService } from './courses.service';
     >
       Style
     </button>
-    <input (keyup.enter)="onKeyUp()" />
+    <input #email (keyup.enter)="onKeyUp(email.value)" />
   `,
 })
 export class CoursesComponent {
@@ -45,7 +45,8 @@ export class CoursesComponent {
     console.log('Style was clicked', $event);
   }
 
-  onKeyUp() {
+  onKeyUp(email: string) {
+    console.log('Email: ' + email);
     console.log('ENTER was pressed');
   }
 

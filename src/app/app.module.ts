@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {CoursesComponent} from "./courses.component";
+import { CoursesComponent } from "./courses.component";
 import { CourseComponent } from './course/course.component';
-import {CoursesService} from "./courses.service";
+import { CoursesService } from "./courses.service";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {CoursesService} from "./courses.service";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     CoursesService

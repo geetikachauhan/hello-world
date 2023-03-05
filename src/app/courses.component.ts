@@ -25,7 +25,8 @@ import { CoursesService } from './courses.service';
     >
       Style
     </button>
-    <input #email (keyup.enter)="onKeyUp(email.value)" />
+    <!--    <input #email (keyup.enter)="onKeyUp(email.value)" />-->
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUpTwoWay()" />
   `,
 })
 export class CoursesComponent {
@@ -34,6 +35,7 @@ export class CoursesComponent {
   imageUrl;
   colSpan = 2;
   isActive = true;
+  email = 'random.email@random.com';
 
   constructor(service: CoursesService) {
     this.title = service.getTitle();
@@ -48,6 +50,10 @@ export class CoursesComponent {
   onKeyUp(email: string) {
     console.log('Email: ' + email);
     console.log('ENTER was pressed');
+  }
+
+  onKeyUpTwoWay() {
+    console.log(this.email);
   }
 
   //Logic for calling HTTP service

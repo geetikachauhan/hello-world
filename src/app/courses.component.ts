@@ -4,7 +4,7 @@ import { CoursesService } from './courses.service';
 @Component({
   selector: 'courses',
   template: `
-    <h2>{{ title }}</h2>
+    <h2>{{ title | uppercase }}</h2>
     <ul>
       <li *ngFor="let course of courses">
         {{ course }}

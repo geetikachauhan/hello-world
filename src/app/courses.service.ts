@@ -6,4 +6,8 @@ export class CoursesService {
   getTitle() {
     return 'List of Courses';
   }
+
+  getImageUrl(){
+    return 'https://picsum.photos/id/237/200/300'
+  }
 }

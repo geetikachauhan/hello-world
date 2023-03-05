@@ -16,7 +16,10 @@ import { CoursesService } from './courses.service';
         <td [attr.colspan]="colSpan">ColSpan</td>
       </tr>
     </table>
-    <button class="btn btn-primary" [class.toggle-class]="isActive">Save</button>
+    <button class="btn btn-primary" [class.toggle-class]="isActive">
+      Save
+    </button>
+    <button [style.background-color]="isActive ? 'white' : 'red'">Style</button>
   `,
 })
 export class CoursesComponent {

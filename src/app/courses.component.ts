@@ -19,7 +19,12 @@ import { CoursesService } from './courses.service';
     <button class="btn btn-primary" [class.toggle-class]="isActive">
       Save
     </button>
-    <button [style.background-color]="isActive ? 'white' : 'red'">Style</button>
+    <button
+      [style.background-color]="isActive ? 'white' : 'red'"
+      (click)="onSave($event)"
+    >
+      Style
+    </button>
   `,
 })
 export class CoursesComponent {
@@ -33,6 +38,10 @@ export class CoursesComponent {
     this.title = service.getTitle();
     this.courses = service.getCourses();
     this.imageUrl = service.getImageUrl();
+  }
+
+  onSave($event: any) {
+    console.log('Style was clicked', $event);
   }
 
   //Logic for calling HTTP service

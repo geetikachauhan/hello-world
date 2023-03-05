@@ -25,6 +25,7 @@ import { CoursesService } from './courses.service';
     >
       Style
     </button>
+    <input (keyup.enter)="onKeyUp()" />
   `,
 })
 export class CoursesComponent {
@@ -42,6 +43,10 @@ export class CoursesComponent {
 
   onSave($event: any) {
     console.log('Style was clicked', $event);
+  }
+
+  onKeyUp() {
+    console.log('ENTER was pressed');
   }
 
   //Logic for calling HTTP service
